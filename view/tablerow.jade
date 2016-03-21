@@ -1,0 +1,34 @@
+- var state = intervals[fl.key] != null;
+                tr.wRows
+                    td.ff
+                        if state
+                            i.glyphicon.glyphicon-certificate.bs-active
+                        else
+                            i.glyphicon.glyphicon-certificate.bs-default
+                    td.h3= fl.key
+                    td.h4= fl.interval
+                    td.lsc(data-key= fl.key, data-state= state.toString())
+                        .btn-group(role='group', aria-label='...')
+                            if state
+                                button.btn-tgl.btn.btn-default(type="button")
+                                    i.glyphicon.glyphicon-pause
+                            else
+                                button.btn-tgl.btn.btn-success(type="button")
+                                    i.glyphicon.glyphicon-play
+                            
+                            .btn-group(role='group')
+                                button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Options 
+                                    span.caret
+                                ul.dropdown-menu
+                                    li
+                                        a.wedit(href='javascript:void(0);') Edit
+                                    li
+                                        a.wdelete(href='javascript:void(0);') Delete
+                    tr.fileContent
+                        td(colspan="4", data-key= fl.key)
+                            textarea.codeMld= fl.body
+                            br
+                            div(style="float:right")
+                                .btn-group(role='group', aria-label='...')
+                                    button.btn.btn-info.btnSave(type=button) Save
+                                    button.btn.btn-default.btnCancel(type=button) Cancel
