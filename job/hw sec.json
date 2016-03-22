@@ -1,5 +1,6 @@
 {
     "interval": 6000,
-    "key": "hello"
+    "key": "hello",
+  	"condition": "1==1"
     
 }
