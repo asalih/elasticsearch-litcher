@@ -1,12 +1,14 @@
 {
-    "url": "http://search.sigortam.net",
-    "index": "users",
-    "type": "user",
+    "hostname": "10.20.120.28",
+    "port": 9200,
+    "path": "/users/user/_search",
     "interval": 5000,
     "query": {
-        "term" : { "Username" : "Kimchy" } 
-    },
-    "condition": "result.hits.length > 0",
-    "then": "mail:asalih@sigortam.net"
+            "query": {
+                "term":{ "Username":"Kimchy" }
+            }
+        },
+    "condition": "result.hits.hits.length == 0",
+    "then": "mail:mail@mail.net"
     
 }
