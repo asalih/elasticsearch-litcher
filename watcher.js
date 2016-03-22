@@ -29,9 +29,9 @@ global.watcher = module.exports = {
                     options.interval = 1000;
                 }
                 
-            intervalId = setInterval(function () {
+            intervalId = setInterval(function (opt) {
                         console.log(key);
-                }, options.interval);
+                }, options.interval, options);
             
                 this.intervals[key] = intervalId;
             }

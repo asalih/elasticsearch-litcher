@@ -1,0 +1,12 @@
+{
+    "url": "http://search.sigortam.net",
+    "index": "users",
+    "type": "user",
+    "interval": 5000,
+    "query": {
+        "term" : { "Username" : "Kimchy" } 
+    },
+    "condition": "result.hits.length > 0",
+    "then": "mail:asalih@sigortam.net"
+    
+}
