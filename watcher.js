@@ -1,5 +1,4 @@
 var fs = require("fs");
-var http = require("http");
 var l = require("./logic");
 
 var path = __dirname + "/job/"
@@ -25,7 +24,7 @@ global.watcher = module.exports = {
         try {
             var intervalId = this.intervals[key];
             if(intervalId == null){
-                var options = this.readWatchFile(key);
+                var options = this.readAndParseFile(key);
                 
                 if(options.interval < 1000){
                     options.interval = 1000;
@@ -86,7 +85,7 @@ global.watcher = module.exports = {
             return false;
         }
     },
-    readWatchFile: function (key) {
+    readAndParseFile: function (key) {
         var body = this.readRawWatchFile(key);
         return JSON.parse(body);
     },

@@ -1,3 +1,5 @@
+var http = require("http");
+
 global.logic = module.exports = {
     processQuery: function (opt) {
         var query = JSON.stringify(opt.query);
@@ -30,7 +32,7 @@ global.logic = module.exports = {
                     var conditionResult = eval(this.externalData.condition);
                     
                     if(conditionResult){
-                        this.processThen(opt);
+                        logic.processThen(opt);
                     }
                     
                 });
@@ -47,6 +49,22 @@ global.logic = module.exports = {
         req.end();
     },
     processThen: function (opt) {
+        var conf = this.getConfig();
         
+        if(opt.then != undefined){
+            if(opt.then.mail != undefined){
+                this.handleMail(conf, opt);    
+            }
+            if(opt.then.slack != undefined){
+                //push to slack
+            }
+        }
+    },
+    getConfig: function () {
+        //warn: reading config file from cache will be much more efficient 
+        return watcher.readAndParseFile("../config");
+    },
+    handleMail: function (config, opt) {
+        console.log(opt.then.mail.to);
     }
 }
