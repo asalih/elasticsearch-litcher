@@ -9,6 +9,8 @@
             }
         },
     "condition": "result.hits.hits.length == 0",
-    "then": "mail:mail@mail.net"
+    "then": {
+        "mail": "mail@mail.net"
+    }
     
 }
