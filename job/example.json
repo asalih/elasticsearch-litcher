@@ -10,7 +10,7 @@
         },
     "condition": "result.hits.hits.length == 0",
     "then": {
-        "mail": { "to": "mail@mail.com" }
+        "mail": { "from": "mailform@mail.com", "to": "mail@mail.com", "subject": "alert subject", "html": "elasticsearch alert" }
     }
     
 }

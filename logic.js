@@ -1,4 +1,5 @@
 var http = require("http");
+var nmail = require("nodemailer");
 
 global.logic = module.exports = {
     processQuery: function (opt) {
@@ -66,5 +67,10 @@ global.logic = module.exports = {
     },
     handleMail: function (config, opt) {
         console.log(opt.then.mail.to);
+        
+        var transporter = nmail.createTransport(config.mail);
+        var mailOptions = opt.then.mail;
+            // send mail
+        transporter.sendMail(mailOptions);
     }
 }
