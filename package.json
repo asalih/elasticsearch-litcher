@@ -1,0 +1,17 @@
+{
+    "name": "elasticsearh-litcher"
+  , "description": "Alternative for Elasticsearch Watcherin NodeJs"
+  , "version": "0.1.0"
+  , "author": "Ahmet Salih <ahmet.c.salih@gmail.com>"
+  , "repository": {
+        "type": "git",
+        "url": "https://github.com/asalih/elasticsearch-litcher"
+    }
+    , "dependencies": {
+        "body-parser": "1.15.0",
+        "express": "4.13.4",
+        "http": "*",
+        "jade": "1.11.0",
+        "nodemailer": "2.3.0"
+    }
+}

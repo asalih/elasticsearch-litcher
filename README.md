@@ -1,3 +1,3 @@
 # elasticsearch-litcher
 
-Lite watcher for elasticsearch. 
+alternative of watcher for elasticsearch. 
